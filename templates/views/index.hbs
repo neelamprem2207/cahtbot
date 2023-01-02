@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>ChatBot</title>
+  <link rel="icon" href="/img/chatbot.png">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+  <div>
+    <h1>ChatBot</h1>
+    <a href="/dashboard">chatHistory</a>
+  </div>
+      
+  <div>
+    <img class="open-button" id="open-button-id" src="/img/chatbot.png" alt="chatbot" onclick="openForm()">
+  </div>
+  <div class="chat-popup" id="chat-popup-id">
+    <div class="popup-header" id="popup-header-id">
+      <img class="chatbot-icon" src = "/img/chatbot.png" alt="ChatBot" >
+      <span class ="chat-bot" >ChatBot</span>
+      <img class="btn-minimize" src="/img/minimize.png" onclick="closeForm()">
+      <img class="cross-icon" src = "/img/cross.png" alt="cross" onclick="openModalWindow()"> 
+    </div>
+    <div class="message-area" id="message-area-id">
+      <div class="predefined">
+        <center><button class="predefined-samples" id="hello">Hello</button>
+        <button class="predefined-samples" id="help">Help</button>
+        <button class="predefined-samples" id="link">Link</button></center>
+      </div>
+      <div class="chat-area" id="chat-area">
+          
+      </div>
+    </div>
+    <div class="popup-footer" id="popup-footer-id">
+      <input class="txtMsg" placeholder="Start a coverstion" type="text" id="txtUserMsgId" >
+      <img class="microphone" src="/img/microphone.png" onclick="runSpeechRecognition()"> 
+      <img class="sendBtn" onclick="sendMessage()" src="/img/send.png" id="sendBtnId">
+    </div>
+    <div class="modal-window-microphone" id="modal-window-microphone">
+      <center> <img class="modal-microphone" alt="microphone" src="/img/mic3.gif">
+      <p class="listening">Listening...</p></center>
+    </div>
+    <div class="modal-window" id="modal-window">
+      <div class="modal-body">
+        <div class="modal-window-exit">
+          <center><strong><p class="exit-comment" >Are you Sure Want to Exit?</p></strong></center>
+        </div>
+        <center><button class="modal-window-confirm-btn" onclick="sessionClear()">Confirm</button>&nbsp&nbsp&nbsp&nbsp<button class="modal-window-cancel-btn" onclick="closeModalWindow()">Cancel</button></center>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>
+
+</html>
+
+
+
+{{!-- <div class="modal-windows">
+        <dialog class="modal-window-microphone" id="modal-window-microphone">
+        <center> <img class="modal-microphone" alt="microphone" src="/img/mic3.gif">
+        <p class="listening">Listening...</p></center>
+      </dialog>
+      <dialog class="modal-window" id="modal-window">
+        <div class="modal-body">
+          <div class="modal-window-exit">
+            <center><strong><p class="exit-comment" >Are you Sure Want to Exit?</p></strong></center>
+          </div>
+          <center><button class="modal-window-confirm-btn" onclick="sessionClear()">Confirm</button>&nbsp&nbsp&nbsp&nbsp<button class="modal-window-cancel-btn" onclick="closeModalWindow()">Cancel</button></center>
+        </div>
+      </dialog>
+      </div> --}}

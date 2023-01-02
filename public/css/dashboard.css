@@ -1,0 +1,96 @@
+h1{
+    position: absolute;
+    width: 12%;
+    margin: 0%;
+    padding: 0%;
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 500;
+}
+
+
+
+.tab{
+    position: relative;
+    left: 12%;
+    width: 88%;
+    height: 90%;
+    border: solid 1px black;
+    background: rgb(0 127 255);
+}
+
+.tabBtn{
+    outline: none;
+    height: 100%;
+    cursor: pointer;
+    border: 0px;
+    padding: 0.3%;
+    font-size: 75%;
+    color: white;
+    font-weight: bold;
+    background: rgb(0 127 235);
+}
+
+.dashboard-menu {
+    width: 12%;
+    position: absolute;
+    height: 92%;
+}
+
+.Chat-display {
+    width: 83%;
+    position: absolute;
+    left: 12.6%;
+    height: 83.5%;
+    background-color: aliceblue;
+    padding: 2%;
+    overflow-y: auto;
+}
+
+.Chat-display::-webkit-scrollbar {
+    width: 3px;
+    overflow: scroll;
+}
+
+/* Track */
+.Chat-display::-webkit-scrollbar-track{
+    background: #f1f1f1; 
+    overflow: scroll;
+}
+  
+/* Handle */
+.Chat-display::-webkit-scrollbar-thumb {
+    background: #888; 
+    overflow: scroll;
+}
+
+/* Handle on hover */
+.Chat-display::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+    overflow: scroll;
+}
+
+.user-icon{
+    width: 1.5%;
+    position: relative;
+}
+
+.chat-icon{
+    width: 1.6%;
+    position: relative;
+}
+
+.user {
+    position: sticky;
+    font-size: 125%;
+}
+
+.bot {
+    position: sticky;
+    font-size: 125%;
+}
+
+.seperator {
+    padding-top: 1%;
+}

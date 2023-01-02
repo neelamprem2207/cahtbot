@@ -1,0 +1,424 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  
+  color: white;
+  box-shadow: grey;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  width: 10%;
+}
+
+/* .chatbot-icon:hover{
+  box-shadow: 0px 15px 25px -5px rgba(darken(grey, 40%));
+  transform:scale(1.1);
+}
+
+.chatbot-icon:active{
+  box-shadow: 0px 4px 8px rgba(darken(grey, 30%));
+    transform: scale(.98);
+} */
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  
+  display: none;
+  position: fixed;
+  width: 23.5%;
+  bottom: 3%;
+  right: 2%;
+  z-index: 9;
+  background-color: white;
+  border-radius: 25px 25px 0px 0px;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+
+}
+
+/* Full-width textarea */
+/* .form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 15px;
+} */
+
+/* When the textarea gets focus, do something */
+/* .form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+} */
+
+/* Set a style for the submit/send button */
+/* .form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+} */
+
+/* Add a red background color to the cancel button */
+/* .form-container .cancel {
+  background-color: red;
+} */
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+.popup-header{
+  background: rgb(0 127 255);
+  padding-left: 0.56%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  height: 10%;
+  width: 100%;
+  padding-bottom: 2px;
+  border-radius: 25px 25px 0px 0px;
+}
+
+.chatbot-icon{
+  
+  position: relative;
+  width: 9%;
+  left: 3%;
+}
+
+.chat-bot{
+  font-style: oblique;
+  color: white;  
+  position: relative;
+  top: 1%;
+  left: 2%;
+  font-size: 175%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.btn-minimize {
+  cursor: pointer;
+  width: 6.25%;
+  top: 2.5%;
+  right: 14%;
+  position: absolute;
+}
+
+.cross-icon{
+  outline: none;
+  width: 7%;
+  top: 2%;
+  right: 3%;
+  cursor: pointer;
+  margin-left: 1%;
+  opacity: 0.8;
+  position: absolute;
+}
+
+.message-area
+{
+  background-color: aliceblue;
+  position: sticky;
+  height: 395px;
+  overflow-x: hidden;
+  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+
+.message-area::-webkit-scrollbar {
+  width: 3px;
+  overflow: scroll;
+}
+
+/* Track */
+.message-area::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  overflow: scroll;
+}
+ 
+/* Handle */
+.message-area::-webkit-scrollbar-thumb {
+  background: #888; 
+  overflow: scroll;
+}
+
+/* Handle on hover */
+.message-area::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+  overflow: scroll;
+}
+
+.predefined{
+  
+  background-color: aliceblue;
+  padding: 5.6%;
+  padding-bottom: 2.8%;
+  height: 27.8%;
+  position: static;
+  
+}
+
+.predefined-samples{
+
+  outline: none;
+  border: 0px;
+  padding: 2%;
+  font-size: 85%;
+  border-radius: 25px;
+  width: 20%;
+  height: 40%;
+  background: rgb(0 127 255);
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.predefined-samples:hover{
+  box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+  transform:scale(1.1);
+}
+
+.predefined-samples:active{
+  box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+  transform: scale(.98);
+}
+
+.chat-area{
+
+  position: relative;
+
+}
+
+.popup-footer {
+  position: relative;
+}
+
+.txtMsg
+{
+  position: absolute;
+  width: 76%;
+  padding: 1%;
+  bottom: 1%;
+  height: 95%;
+  margin-top: 1%;
+  margin-left: 1%;
+
+}
+
+.microphone{
+
+  transition: all 0.5s;
+  outline: none;
+  width: 10%;
+  height:10%;
+  left: 78%;
+  cursor: pointer;
+  position: relative;
+}
+
+.microphone:hover{
+  box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+  transform:scale(1.1);
+}
+
+.microphone:active{
+box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+  transform: scale(.98);
+}
+
+.sendBtn {
+
+  outline: none;
+  width: 10%;
+  height: 10%;
+  left: 78%;
+  bottom: 1%;
+  cursor: pointer;
+  position: relative;
+  transition: .3s;
+  
+}
+
+.sendBtn:hover{
+    box-shadow: 0px 15px 25px -5px rgba(darken(dodgerblue, 40%));
+    transform:scale(1.1);
+}
+
+.sendBtn:active{
+  box-shadow: 0px 4px 8px rgba(darken(dodgerblue, 30%));
+    transform: scale(.98);
+}
+
+
+
+.message-box {
+  margin-top: 10px;
+}
+
+
+
+.my-message-box {
+  text-align: right;
+  background: aliceblue;
+}
+
+.message {
+
+  max-width: 80%;
+  border-radius: 5%;
+  padding: 1.5%;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+}
+
+.my-message {
+  
+  position: sticky;
+  margin-top: 1%;
+  float: right;
+  background: rgb(0 127 255);
+  color: white;
+  right: 5%;
+  margin-left: 1%;
+  word-wrap: break-word;
+}
+
+.others-message {
+  float: left;
+  background: white;
+  margin-left: 3%;
+  position: relative;
+  word-wrap: break-word;
+  margin-bottom: 1%;
+}
+
+.others-message-div {
+  float: left;
+  position: sticky;
+  width: 100%;
+  padding: 0px;
+  
+}
+
+.separator-others-message {
+  width: 100%;
+  float: left;
+  font-size: 10px;
+  margin-top: 1.5%;
+  margin-left: 3%;
+}
+
+.separator-my-message {
+  width: 95%;
+  height: 20px;
+  text-align: right;
+  float: right;
+  font-size: 10px;
+  margin-right: 5%;
+  
+}
+
+.date-my-message{
+  
+  margin-right: 5%;
+
+}
+
+
+.message-body{
+  background-color: aliceblue;
+  height: 388px;
+    
+}
+
+.chat-popup .modal-window{
+
+  display: none;
+  top: 35%;
+  width: 80%;
+  height: 22%;
+  left: 10%;
+  padding-bottom: 1%;
+  position: absolute;
+  background: rgb(0 127 255);
+  border-radius: 25px;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.modal-window-confirm-btn{
+
+  outline: none;
+  border-radius: 25px;
+  width: 25%;
+  padding: 2%;
+  border: 0px;
+  cursor: pointer;
+
+}
+
+.modal-window-cancel-btn{
+
+  outline: none;
+  border-radius: 25px;
+  width: 25%;
+  padding: 2%;
+  border: 0px;
+  cursor: pointer; 
+}
+
+.exit-comment{
+  color: white;
+  font-size: 120%;
+  
+}
+
+.user-icon{
+  width: 8%;
+  margin-top: 2%;
+  position: relative;
+  left: -5%;
+}
+
+.chat-icon{
+  width: 10%;
+  position: relative;
+  margin-left: 1.5%;
+}
+
+.modal-microphone{
+  width: 20%;
+}
+
+.modal-window-microphone{
+
+  display: none;
+  top: 43%;
+  width: 80%;
+  left: 11%;
+  height: 30%;
+  padding-top: 3%;
+  position: absolute;
+  background: rgb(0 127 255);
+  border-radius: 25px;
+  box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2), 0 0 1rem rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.listening{
+
+  font-size: 150%;
+  margin-bottom: 0%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+}
